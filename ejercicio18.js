@@ -4,8 +4,8 @@ class Carrito{
         this.productos = [];
     }
 
-    agregarProducto(Producto){
-        this.productos.push(Producto);
+    agregarProducto(producto){
+        this.productos.push(producto);
     }
 
     calcularTotal(){
@@ -23,21 +23,21 @@ class Carrito{
     }
 }
 
-class Producto{
-    
-    constructor(nombre, precio, stock){
-        this.nombre = nombre;
-        this.precio = precio;
-        this.stock = stock;
-    }
-}
+const producto1 = { 
+    nombre: "Laptop", 
+    precio: 1500, 
+    stock: 5 
+};
+const producto2 = { 
+    nombre: "Mouse", 
+    precio: 50, 
+    stock: 20 
+};
 
 const carrito = new Carrito();
-const p1 = new Producto("Laptop", 1500, 10);
-const p2 = new Producto("Mouse", 50, 20);
 
-carrito.agregarProducto(p1);
-carrito.agregarProducto(p2);
+carrito.agregarProducto(producto1);
+carrito.agregarProducto(producto2);
 console.log(carrito.calcularTotal());
 carrito.mostrarResumen();
 
