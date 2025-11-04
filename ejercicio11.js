@@ -1,32 +1,47 @@
-class Producto{
-    #nombre;
-    #precio;
-    #stock;
+class Producto {
+  #nombre;
+  #precio;
+  #stock;
 
-    constructor(nombre, precio, stock) {
-        this.#nombre = nombre;
-        this.#precio = precio;
-        this.#stock = stock;
-    }
+  constructor(nombre, precio, stock) {
+    this.#nombre = nombre;
+    this.#precio = precio;
+    this.#stock = stock;
+  }
 
-    set stock(stock){
-        if (stock>0){
-            this.#stock =  stock;
-        }
-        else console.log("Nuevo stock no válido");
+  set stock(valor) {
+    if (valor > 0) {
+      this.#stock = valor;
+    } else {
+      console.log("Nuevo stock no válido");
     }
+  }
 
-    set precio(nuevo){
-        if (nuevo>0){
-            this.#precio =  nuevo;
-        }
-        else console.log("Nuevo precio no válido");
+  set precio(valor) {
+    if (valor > 0) {
+      this.#precio = valor;
+    } else {
+      console.log("Nuevo precio no válido");
     }
+  }
 
-    vender(cantidad){
-        if (cantidad<=this.#stock){
-            this.stock = this.#stock - cantidad;
-        }
-        else console.log("No hay stock suficiente");
+  get nombre() {
+    return this.#nombre;
+  }
+
+  get precio() {
+    return this.#precio;
+  }
+
+  get stock() {
+    return this.#stock;
+  }
+
+  vender(cantidad) {
+    if (cantidad <= this.#stock) {
+      this.stock = this.#stock - cantidad;
+    } else {
+      console.log("No hay stock suficiente");
     }
+  }
 }
