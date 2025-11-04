@@ -37,3 +37,9 @@ class Triangulo extends Figura{
         return this.lado1+this.lado2+this.lado3;
     }
 }
+
+const cuadrado = new Cuadrado(5);
+const triangulo = new Triangulo(6, 4, 5, 5, 6);
+
+console.log("Area: "+ cuadrado.area()+ "\nPerímetro: "+cuadrado.perimetro());
+console.log("Área: "+ triangulo.area()+ "\nPerímetro: "+triangulo.perimetro());
